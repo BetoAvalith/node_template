@@ -21,9 +21,10 @@ readdirSync(PATH_ROUTES).filter( file => {
     const name = file.split('.')[0];
 
     if (name !== 'index') {
-        console.log(`Cargando ruta ${name}`);
-        router.use(`/${name}`, routes[`${name}`])
+        console.log(`Cargando ruta ${name}`); // users, ...
+        router.use(`/${name}`, routes[`${name}`]) // http://localhost:5000/api/users, ...
     }    
     
 });
+
 export default router;
