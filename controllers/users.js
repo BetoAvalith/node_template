@@ -1,3 +1,4 @@
+import { matchedData } from "express-validator";
 import { usersModel } from "../models/users.js"
 
 
@@ -13,8 +14,9 @@ export const getUserById = async (req, res) => {
 
 }
 
-export const createUser = async (req, res) => {    
-    const { body } = req;
+export const createUser = async (req, res) => {  
+      
+    const body = matchedData(req);
     
     const data = await usersModel.create(body);
 
