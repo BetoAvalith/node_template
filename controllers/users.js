@@ -1,24 +1,25 @@
 import { matchedData } from "express-validator";
-import { usersModel } from "../models/users.js"
+
+import { createUserService, findUsersService } from "../services/users.js";
 
 
 export const getUsers = async (req, res) => {
    
-    const data = await usersModel.find({}); 
+    const data = await findUsersService(); 
 
     res.send({ data })
 
 }
 
 export const getUserById = async (req, res) => {
-    
+
 }
 
 export const createUser = async (req, res) => {  
       
     const body = matchedData(req);
     
-    const data = await usersModel.create(body);
+    const data = await createUserService(body);
    
     res.send({data});
 }
