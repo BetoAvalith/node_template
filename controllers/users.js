@@ -11,7 +11,7 @@ export const getUsers = async (req, res) => {
 }
 
 export const getUserById = async (req, res) => {
-
+    
 }
 
 export const createUser = async (req, res) => {  
@@ -19,7 +19,7 @@ export const createUser = async (req, res) => {
     const body = matchedData(req);
     
     const data = await usersModel.create(body);
-
+   
     res.send({data});
 }
 

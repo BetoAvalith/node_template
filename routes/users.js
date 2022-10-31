@@ -2,12 +2,12 @@ import { Router } from "express";
 import { createUser, getUserById, getUsers } from "../controllers/users.js";
 import { createUserValidator } from "../validators/users.js";
 
-const users = Router();
+const router = Router();
 
-users.get('/', getUsers);
+router.get('/', getUsers);
 
-users.get('/:id', getUserById);
+router.get('/:id', getUserById);
 
-users.post('/', createUserValidator,createUser);
+router.post('/', createUserValidator, createUser);
 
-export default users
+export { router };
